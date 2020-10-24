@@ -176,3 +176,62 @@ class hecoso
         Console.ReadLine();
     }
 }
+//bai 3
+Class Queue
+    {
+        Private int dau, cuoi;
+        Private int[] q;
+        Public Queue()
+        {
+            dau = cuoi = 0;
+            q = New int[20];
+        }
+        Public Queue(int n)
+        {
+            dau = cuoi = 0;
+            q = New int[n];
+
+        }
+        Public bool isFull()
+        {
+            Return cuoi >= q.Length - 1;
+        }
+        Public bool isEmpty()
+        {
+            Return dau == 0;
+        }
+        Public void Push(int x)
+        {
+            If (isFull()) Console.WriteLine("Stack day");
+            Else
+            {
+                cuoi++;
+                q[cuoi] = x;
+            }
+        }
+        Public int Pop()
+        {
+            If (isEmpty()) Throw New Exception("Stack rong");
+            Else
+            {
+                int x = q[dau];
+                dau--;
+                Return x;
+            }
+        }
+    }
+// bai 5
+Class Data
+    {
+        Private int day, month, year;
+        Public Data(DateTime dt)
+        {
+            day = dt.Day;
+            month = dt.Month;
+            year = dt.Year;
+        }
+        Public void Hien()
+        {
+            Console.WriteLine("{0}/{1}/{2}", month, day, year);
+        }
+    }
